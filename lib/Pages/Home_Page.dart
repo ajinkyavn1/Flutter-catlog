@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     int days=30;
     return Scaffold(
-      appBar: AppBar(title: Text("This App is catlog App"),),
+      appBar: AppBar(title: Text("This App is catlog. App"),),
       drawer: Drawer(),
       body:Center(
         child: Container(
