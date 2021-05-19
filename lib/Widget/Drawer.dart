@@ -11,12 +11,15 @@ class MyDrawer extends StatelessWidget {
     String Name="Ajinkya Narkhede";
     return Drawer(
       child: Container(
-        color: Colors.deepPurple,
+        color: Colors.black,
         child: ListView(
           children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                ),
                 margin: EdgeInsets.zero,
                 accountEmail: Text(_email,),
                 accountName: Text(Name),//,style: TextStyle(color: Colors.black)
