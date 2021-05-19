@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   }
   void loadData() async{
+    await Future.delayed(Duration(seconds: 2));
     var catlogjson= await rootBundle.loadString("assets/files/catlog.json");
     final decodedjson=jsonDecode(catlogjson);
     var products=decodedjson["products"];
@@ -34,11 +35,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(title: Text("This App is catlog. App")),
 
       drawer: MyDrawer(),
-      body:ListView.builder(
+      body:(CatlogModel.Items!=null && CatlogModel.Items.isNotEmpty)?ListView.builder(
        itemCount: CatlogModel.Items.length,
         itemBuilder: (context,index){
           return CatlogWidget(iteam: CatlogModel.Items[index],);
         },
+      ):Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }

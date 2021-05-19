@@ -29,14 +29,5 @@ class Iteam{
 
 }
 class CatlogModel{
-  static List<Iteam> Items=[
-    Iteam(
-        id: 2,
-        name: "Pixel 5",
-        desc: "Google Pixel phone 5th generation",
-        price: 699,
-        color: "#00ac51",
-        image: "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png"
-    ),
-  ];
+  static List<Iteam> Items;
 }
