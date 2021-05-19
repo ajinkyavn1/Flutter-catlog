@@ -35,8 +35,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(title: Text("This App is catlog. App")),
 
       drawer: MyDrawer(),
-      body:(CatlogModel.Items!=null && CatlogModel.Items.isNotEmpty)?ListView.builder(
-       itemCount: CatlogModel.Items.length,
+      body:(CatlogModel.Items!=null && CatlogModel.Items.isNotEmpty)
+          ?ListView.builder(
+        itemCount: CatlogModel.Items.length,
         itemBuilder: (context,index){
           return CatlogWidget(iteam: CatlogModel.Items[index],);
         },
