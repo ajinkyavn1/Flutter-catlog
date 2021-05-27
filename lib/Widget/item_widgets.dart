@@ -19,7 +19,7 @@ class CatlogWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.deepPurple
             ),
-            child: Text(iteam.name)
+            child: Text(iteam.name,style: TextStyle(color: Colors.white),)
         ),
         child: Image.network(iteam.image),
         footer: Text("\$${iteam.price}"),
