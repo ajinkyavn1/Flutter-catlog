@@ -13,7 +13,7 @@ class CatlogWidget extends StatelessWidget {
       shape: StadiumBorder() ,
       child: ListTile(
         onTap: (){
-          print("${iteam.name } is Preesed");
+          print("${iteam.name } is od");
         },
         leading: Image.network(iteam.image),
         title: Text(iteam.name),

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
@@ -31,6 +32,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     int days=30;
+    final list=List.generate(50, (index) =>CatlogModel.Items[0]);
     return Scaffold(
       appBar: AppBar(title: Text("This App is catlog. App")),
 
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage> {
       ):Center(
         child: CircularProgressIndicator(),
       ),
+
     );
   }
 
