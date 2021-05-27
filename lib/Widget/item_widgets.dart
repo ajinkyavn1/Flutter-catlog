@@ -10,16 +10,33 @@ class CatlogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Card(
-      shape: StadiumBorder() ,
-      child: ListTile(
-        onTap: (){
-          print("${iteam.name } is od");
-        },
-        leading: Image.network(iteam.image),
-        title: Text(iteam.name),
-        subtitle: Text(iteam.desc),
-        trailing: Text("\$${iteam.price}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+      clipBehavior: Clip.antiAlias,
+      elevation:12,
+      shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)) ,
+      child: GridTile(
+        header: Container(
+          padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.deepPurple
+            ),
+            child: Text(iteam.name)
+        ),
+        child: Image.network(iteam.image),
+        footer: Text("\$${iteam.price}"),
       ),
-    );
+      );
+    //);
+    // return Card(
+    //   shape: StadiumBorder() ,
+    //   child: ListTile(
+    //     onTap: (){
+    //       print("${iteam.name } is od");
+    //     },
+    //     leading: Image.network(iteam.image),
+    //     title: Text(iteam.name),
+    //     subtitle: Text(iteam.desc),
+    //     trailing: Text("\$${iteam.price}",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+    //   ),
+    // );
   }
 }

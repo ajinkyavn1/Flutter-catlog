@@ -32,18 +32,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     int days=30;
-    final list=List.generate(50, (index) =>CatlogModel.Items[0]);
     return Scaffold(
       appBar: AppBar(title: Text("This App is catlog. App")),
 
       drawer: MyDrawer(),
       body:(CatlogModel.Items!=null && CatlogModel.Items.isNotEmpty)
-          ?ListView.builder(
-        itemCount: CatlogModel.Items.length,
-        itemBuilder: (context,index){
-          return CatlogWidget(iteam: CatlogModel.Items[index],);
-        },
-      ):Center(
+      //     ?ListView.builder(
+      //   itemCount: CatlogModel.Items.length,
+      //   itemBuilder: (context,index){
+      //     return CatlogWidget(iteam: CatlogModel.Items[index],);
+      //   },
+      // )
+        ?GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              mainAxisSpacing: 16,
+              crossAxisSpacing:16,
+              crossAxisCount: 2),
+          itemBuilder: (context,index){
+            final src=CatlogModel.Items[index];
+            return  CatlogWidget(iteam: CatlogModel.Items[index]);
+          },
+          itemCount: CatlogModel.Items.length,
+      )
+          :Center(
         child: CircularProgressIndicator(),
       ),
 
