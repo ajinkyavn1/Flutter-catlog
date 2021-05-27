@@ -21,8 +21,14 @@ class CatlogWidget extends StatelessWidget {
             ),
             child: Text(iteam.name,style: TextStyle(color: Colors.white),)
         ),
-        child: Image.network(iteam.image),
-        footer: Text("\$${iteam.price}"),
+        child: Image.network(iteam.image,fit: BoxFit.cover,),
+        footer:  Container(
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+                color: Colors.deepPurple
+            ),
+            child: Text("\$${iteam.price}",style: TextStyle(color: Colors.white),)
+        ),
       ),
       );
     //);
