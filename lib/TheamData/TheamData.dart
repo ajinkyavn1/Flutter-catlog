@@ -12,7 +12,7 @@ class TheamData
         textTheme:Theme.of(context).textTheme
     ),
     primarySwatch: Colors.deepPurple,
-    fontFamily: GoogleFonts.lato().fontFamily,
+    fontFamily: GoogleFonts.poppins().fontFamily,
   );
 
 
