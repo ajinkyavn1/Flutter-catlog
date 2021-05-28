@@ -25,7 +25,7 @@ class CatlogWidget extends StatelessWidget {
         footer:  Container(
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-                color: Colors.deepPurple
+                color: Colors.black
             ),
             child: Text("\$${iteam.price}",style: TextStyle(color: Colors.white),)
         ),
