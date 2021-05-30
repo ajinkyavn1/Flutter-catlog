@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:frist_flutter/Home_Widget/Catlog_list.dart';
-import 'package:frist_flutter/Home_Widget/Header_widget.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
+import 'package:frist_flutter/Widget/Home_Widget/Catlog_list.dart';
+import 'package:frist_flutter/Widget/Home_Widget/Header_widget.dart';
 import 'package:velocity_x/velocity_x.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
