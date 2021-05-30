@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:frist_flutter/Home_Widget/Catlog_list.dart';
+import 'package:frist_flutter/Home_Widget/Header_widget.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Header(),
               if(CatlogModel.Items!=null&&CatlogModel.Items.isNotEmpty)
-                Products().expand()
+                CatlogList().expand()
               else
                   CircularProgressIndicator().centered().expand()
 
@@ -56,87 +58,6 @@ class _HomePageState extends State<HomePage> {
 
 
 }
-class Header extends StatelessWidget {
-  const Header({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child:Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          "Catlog App".text.xl5.bold.color(TheamData().darkblue).make(),
-          "Treanding Products".text.xl2.make(),
 
 
-        ],
-      ),
-    );
-  }
-}
-class Products extends StatelessWidget {
-  const Products({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: CatlogModel.Items.length,
-      itemBuilder: (context,index){
-        final catlog=CatlogModel.Items[index];
-        return CatlogIteam(Catlog:catlog);
-      },
-    );
-  }
-}
-class CatlogIteam extends StatelessWidget {
-  final Iteam Catlog;
-  const CatlogIteam({Key key,@required this.Catlog}) :assert(Catlog!=null),
-        super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return VxBox(
-      child: Row(
-        children: [
-         Images(
-           image: Catlog.image,
-         ),
-          Expanded(child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Catlog.name.text.lg.bold.color(TheamData().darkblue).make(),
-              Catlog.desc.text.textStyle(context.captionStyle).make(),
-              10.heightBox,
-              ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding: EdgeInsets.zero,
-                children: [
-                  "\$${Catlog.price}".text.bold.xl.make(),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all(StadiumBorder()),
-                      backgroundColor: MaterialStateProperty.all(TheamData().darkblue)
-                    ),
-                      onPressed: (){},
-                      child: "Buy".text.make()
-                  )
-                ],
-              ).pOnly(right: 8.0)
-            ],
-          ))
-        ],
-      )
-    ).white.rounded.square(150).make().py16();
-  }
-}
-class Images extends StatelessWidget {
-  final String image;
-
-  const Images({Key key,@required this.image}) :assert(image!=null), super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return  Image.network(image).box.rounded.py8.color(TheamData().creamColor).make().py16().w40(context);
-  }
-}
 
