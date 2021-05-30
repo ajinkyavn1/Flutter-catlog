@@ -14,6 +14,7 @@ class TheamData
     primarySwatch: Colors.deepPurple,
     fontFamily: GoogleFonts.poppins().fontFamily,
   );
-
+final creamColor=Color(0xfff5f5f5);
+final darkblue=Color(0xff403b58);
 
 }
