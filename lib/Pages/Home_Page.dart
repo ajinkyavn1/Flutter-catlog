@@ -45,9 +45,8 @@ class _HomePageState extends State<HomePage> {
               if(CatlogModel.Items!=null&&CatlogModel.Items.isNotEmpty)
                 Products().expand()
               else
-                Center(
-                  child: CircularProgressIndicator(),
-                )
+                  CircularProgressIndicator().centered().expand()
+
             ],
           )
         ),
@@ -108,17 +107,22 @@ class CatlogIteam extends StatelessWidget {
             children: [
               Catlog.name.text.lg.bold.color(TheamData().darkblue).make(),
               Catlog.desc.text.textStyle(context.captionStyle).make(),
+              10.heightBox,
               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding: Vx.mH8,
+                buttonPadding: EdgeInsets.zero,
                 children: [
                   "\$${Catlog.price}".text.bold.xl.make(),
                   ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(StadiumBorder()),
+                      backgroundColor: MaterialStateProperty.all(TheamData().darkblue)
+                    ),
                       onPressed: (){},
                       child: "Buy".text.make()
                   )
                 ],
-              )
+              ).pOnly(right: 8.0)
             ],
           ))
         ],
