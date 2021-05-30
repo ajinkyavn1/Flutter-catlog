@@ -7,8 +7,6 @@ import 'package:frist_flutter/Home_Widget/Header_widget.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:frist_flutter/Widget/Drawer.dart';
-import 'package:frist_flutter/Widget/item_widgets.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
 
@@ -34,7 +32,6 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
-    int days=30;
     return Scaffold(
       backgroundColor: TheamData().creamColor,
       body: SafeArea(

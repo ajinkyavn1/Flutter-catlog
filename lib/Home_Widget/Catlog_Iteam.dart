@@ -4,6 +4,8 @@ import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'Catlog_Image.dart';
+
 class CatlogIteam extends StatelessWidget {
   final Iteam Catlog;
   const CatlogIteam({Key key,@required this.Catlog}) :assert(Catlog!=null),

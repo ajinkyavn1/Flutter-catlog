@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/Pages/Home_Page.dart';
 
+import 'Catlog_Iteam.dart';
+
 class CatlogList extends StatelessWidget {
   const CatlogList({Key key}) : super(key: key);
 
