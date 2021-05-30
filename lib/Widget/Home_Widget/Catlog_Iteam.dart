@@ -15,8 +15,11 @@ class CatlogIteam extends StatelessWidget {
     return VxBox(
         child: Row(
           children: [
-            Images(
-              image: Catlog.image,
+            Hero(
+              tag: Key(Catlog.id.toString()),
+              child: Images(
+                image: Catlog.image,
+              ),
             ),
             Expanded(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
