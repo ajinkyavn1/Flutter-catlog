@@ -99,18 +99,40 @@ class CatlogIteam extends StatelessWidget {
     return VxBox(
       child: Row(
         children: [
-          Image.network(Catlog.image).box.rounded.py8.color(TheamData().creamColor).make().py16().w40(context)
+         Images(
+           image: Catlog.image,
+         ),
+          Expanded(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Catlog.name.text.lg.bold.color(TheamData().darkblue).make(),
+              Catlog.desc.text.textStyle(context.captionStyle).make(),
+              ButtonBar(
+                alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: Vx.mH8,
+                children: [
+                  "\$${Catlog.price}".text.bold.xl.make(),
+                  ElevatedButton(
+                      onPressed: (){},
+                      child: "Buy".text.make()
+                  )
+                ],
+              )
+            ],
+          ))
         ],
       )
     ).white.rounded.square(150).make().py16();
   }
 }
 class Images extends StatelessWidget {
-  const Images({Key key}) : super(key: key);
+  final String image;
 
+  const Images({Key key,@required this.image}) :assert(image!=null), super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return  Image.network(image).box.rounded.py8.color(TheamData().creamColor).make().py16().w40(context);
   }
 }
 
