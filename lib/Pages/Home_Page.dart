@@ -33,6 +33,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(CupertinoIcons.cart),
+        onPressed: (){},
+        backgroundColor: TheamData().darkblue ,
+      ),
       backgroundColor: TheamData().creamColor,
       body: SafeArea(
         child: Container(
