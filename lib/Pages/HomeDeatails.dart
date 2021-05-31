@@ -25,8 +25,8 @@ final Iteam Catlog;
                     backgroundColor: MaterialStateProperty.all(TheamData().darkblue)
                 ),
                 onPressed: (){},
-                child: "Buy".text.make()
-            ).wh(100, 50)
+                child: "Add to Cart".text.make()
+            ).wh(120,50)
           ],
         ).p32(),
       ),
