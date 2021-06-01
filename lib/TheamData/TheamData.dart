@@ -11,6 +11,18 @@ class TheamData
         elevation:15,
         textTheme:Theme.of(context).textTheme
     ),
+
+    primarySwatch: Colors.deepPurple,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+  );
+  static ThemeData darkTheme(BuildContext context) => ThemeData(
+    appBarTheme: AppBarTheme(
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+        elevation:15,
+        textTheme:Theme.of(context).textTheme
+    ),
+
     primarySwatch: Colors.deepPurple,
     fontFamily: GoogleFonts.poppins().fontFamily,
   );

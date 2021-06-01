@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
+import 'package:frist_flutter/Pages/Cart_Page.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -38,7 +39,9 @@ class CatlogIteam extends StatelessWidget {
                             shape: MaterialStateProperty.all(StadiumBorder()),
                             backgroundColor: MaterialStateProperty.all(TheamData().darkblue)
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context,MaterialPageRoute(builder:(context)=> CartPage()));
+                        },
                         child:"Add to Cart".text.make()
                     )
                   ],

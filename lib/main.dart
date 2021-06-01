@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //write false if you want to remove debug batch
       //home:HomePage(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
      theme: TheamData.lightTheme(context),
-     darkTheme: ThemeData(brightness: Brightness.dark),
+     //darkTheme: ThemeData.darkTheme(),
     initialRoute:MyRoutes.homepage ,
      routes: {
       MyRoutes.homepage:(context)=>HomePage(),
