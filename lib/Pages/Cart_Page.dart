@@ -46,7 +46,7 @@ class _CartToatal extends StatelessWidget {
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
               ),
-              
+
 
               child: "Buy".text.make()
           ).w32(context)
