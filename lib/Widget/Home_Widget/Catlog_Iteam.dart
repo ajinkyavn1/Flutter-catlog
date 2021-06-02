@@ -55,9 +55,10 @@ class _AddToCart extends StatefulWidget {
 }
 
 class __AddToCartState extends State<_AddToCart> {
-  bool isAdded=false;
+  final _cart=CartModel();
   @override
   Widget build(BuildContext context) {
+    bool isAdded=_cart.iteams.contains(widget.catalog)??false;
     return ElevatedButton(
         style: ButtonStyle(
             shape: MaterialStateProperty.all(StadiumBorder()),
@@ -65,8 +66,9 @@ class __AddToCartState extends State<_AddToCart> {
         ),
         onPressed: (){
           isAdded=isAdded.toggle();
+
           final _catlog=CatlogModel();
-          final _cart=CartModel();
+
           _cart.catalog=_catlog;
           _cart.add(widget.catalog);
           setState(() {
