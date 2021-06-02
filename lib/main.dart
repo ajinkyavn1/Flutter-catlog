@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, //write false if you want to remove debug batch
       //home:HomePage(),
       themeMode: ThemeMode.system,
-     theme: TheamData.lightTheme(context),
-     //darkTheme: ThemeData.darkTheme(),
+     theme: MyTheam.lightTheme(context),
+     darkTheme: MyTheam.darkTheme(context), 
     initialRoute:MyRoutes.homepage ,
      routes: {
       MyRoutes.homepage:(context)=>HomePage(),

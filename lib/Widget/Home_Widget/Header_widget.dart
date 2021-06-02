@@ -11,7 +11,7 @@ class Header extends StatelessWidget {
       child:Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          "Catlog App".text.xl5.bold.color(TheamData().darkblue).make(),
+          "Catlog App".text.xl5.bold.color(context.theme.accentColor).make(),
           "Treanding Products".text.xl2.make(),
 
 

@@ -8,6 +8,6 @@ class Images extends StatelessWidget {
   const Images({Key key,@required this.image}) :assert(image!=null), super(key: key);
   @override
   Widget build(BuildContext context) {
-    return  Image.network(image).box.rounded.py8.color(TheamData().creamColor).make().py16().w40(context);
+    return  Image.network(image).box.rounded.py8.color(context.canvasColor).make().py16().w40(context);
   }
 }

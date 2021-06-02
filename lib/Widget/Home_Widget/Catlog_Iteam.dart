@@ -26,7 +26,7 @@ class CatlogIteam extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Catlog.name.text.lg.bold.color(TheamData().darkblue).make(),
+                Catlog.name.text.lg.bold.color(context.theme.accentColor).make(),
                 Catlog.desc.text.textStyle(context.captionStyle).make(),
                 10.heightBox,
                 ButtonBar(
@@ -37,7 +37,7 @@ class CatlogIteam extends StatelessWidget {
                     ElevatedButton(
                         style: ButtonStyle(
                             shape: MaterialStateProperty.all(StadiumBorder()),
-                            backgroundColor: MaterialStateProperty.all(TheamData().darkblue)
+                            backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
                         ),
                         onPressed: (){
                           Navigator.push(context,MaterialPageRoute(builder:(context)=> CartPage()));
@@ -50,7 +50,7 @@ class CatlogIteam extends StatelessWidget {
             ))
           ],
         )
-    ).white.rounded.square(150).make().py16();
+    ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }
 

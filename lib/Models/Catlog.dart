@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class Iteam{
   final int  id;
   final String name;
@@ -28,6 +30,8 @@ class Iteam{
   };
 
 }
-class CatlogModel{
+class CatlogModel {
   static List<Iteam> Items;
+
+  static Iteam getById(int id) => Items.firstWhere((element) => element.id== id,orElse: null);
 }

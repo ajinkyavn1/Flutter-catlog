@@ -13,7 +13,7 @@ final Iteam Catlog;
     return Scaffold(
       appBar: AppBar(backgroundColor:Colors.transparent,elevation: 0,),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.theme.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -22,7 +22,7 @@ final Iteam Catlog;
             ElevatedButton(
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(StadiumBorder()),
-                    backgroundColor: MaterialStateProperty.all(TheamData().darkblue)
+                    backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
                 ),
                 onPressed: (){},
                 child: "Add to Cart".text.make()
@@ -31,7 +31,7 @@ final Iteam Catlog;
         ).p32(),
       ),
 
-      backgroundColor: TheamData().creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
       body: SafeArea(
         bottom: false,
 
@@ -43,15 +43,15 @@ final Iteam Catlog;
             ).h32(context),
             Expanded(
                 child:VxArc(
-                  height: 30,
+                  height: 50,
                   arcType: VxArcType.CONVEY,
                   edge: VxEdge.TOP,
                   child: Container(
                     width: context.screenWidth,
-                    color: Colors.white,
+                    color: context.theme.cardColor,
                     child: Column(
                       children: [
-                        Catlog.name.text.xl4.bold.color(TheamData().darkblue).make(),
+                        Catlog.name.text.xl4.bold.color(context.accentColor).make(),
                         Catlog.desc.text.xl.textStyle(context.captionStyle).make(),
                         "Technology, which brings together tools to promote development, use and information exchange, has as its main objective of making tasks easier and the solving of many problems of mankind. When technology progresses and makes our lives even more convenient, we must stress how beneficial it is to our lives".text
                         .textStyle(context.captionStyle).make().p16(),
