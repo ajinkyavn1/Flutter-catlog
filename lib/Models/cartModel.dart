@@ -52,5 +52,3 @@ class RemoveMutation extends VxMutation<MyStore>
 
 }
 
-
-}

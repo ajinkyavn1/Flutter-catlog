@@ -36,13 +36,19 @@ class _CartToatal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _Cart=CartModel();
+    final CartModel _Cart=(VxState.store as MyStore).cart;
     return SizedBox(
       height:200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$${_Cart.totalprice}".text.xl4.color(context.accentColor).make(),
+          VxConsumer(
+              builder: (context,_){
+                return "\$${_Cart.totalprice}".text.xl4.color(context.accentColor).make();
+              },
+              mutations: {RemoveMutation},
+              notifications: {}
+          ),
           30.widthBox,
           ElevatedButton(
               onPressed: () {
