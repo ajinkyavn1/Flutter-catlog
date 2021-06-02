@@ -82,16 +82,22 @@ class _CartList extends StatelessWidget {
         :ListView.builder(
       itemCount: _Cart.iteams.length,
         itemBuilder:(context,index){
-          return ListTile(
-            leading: Icon(Icons.done),
-          trailing: IconButton(
-
-            icon: Icon(CupertinoIcons.cart_badge_minus),
-              onPressed: (){
-              RemoveMutation(_Cart.iteams[index]);
-              },
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20)
             ),
-            title: _Cart.iteams[index].name.text.xl.make(),
+            child: ListTile(
+              leading:Image.network(_Cart.iteams[index].image),
+            trailing: IconButton(
+
+              icon: Icon(CupertinoIcons.cart_badge_minus),
+                onPressed: (){
+                RemoveMutation(_Cart.iteams[index]);
+                },
+              ),
+              title: _Cart.iteams[index].name.text.xl.make(),
+            subtitle: "Iteam Added to Cart".text.make(),
+            ),
           );
         }
     );
