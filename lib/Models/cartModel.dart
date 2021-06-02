@@ -1,4 +1,6 @@
+import 'package:frist_flutter/Core/State.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModel{
 
@@ -25,4 +27,30 @@ final List<int> _ItemIds=[];
   {
     _ItemIds.remove(iteams.id);
   }
+}
+
+class AddMutation extends VxMutation<MyStore>
+{
+  final Iteam iteams;
+
+  AddMutation(this.iteams);
+  @override
+  perform() {
+    store.cart.add(iteams);
+  }
+
+}
+class RemoveMutation extends VxMutation<MyStore>
+{
+  final Iteam iteams;
+
+  RemoveMutation(this.iteams);
+  @override
+  perform() {
+    store.cart.remove(iteams);
+  }
+
+}
+
+
 }

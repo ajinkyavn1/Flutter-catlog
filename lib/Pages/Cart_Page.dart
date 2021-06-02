@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frist_flutter/Core/State.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/Models/cartModel.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
@@ -68,7 +69,8 @@ class _CartList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _Cart=CartModel();
+    VxState.listen(context,to: [RemoveMutation]);
+    final CartModel _Cart=(VxState.store as MyStore).cart;
     return _Cart.iteams?.isEmpty?
         "Cart Is Empty".text.xl3.color(context.accentColor).makeCentered()
         :ListView.builder(
@@ -80,7 +82,7 @@ class _CartList extends StatelessWidget {
 
             icon: Icon(CupertinoIcons.cart_badge_minus),
               onPressed: (){
-              _Cart.remove(_Cart.iteams[index]);
+              RemoveMutation(_Cart.iteams[index]);
               },
             ),
             title: _Cart.iteams[index].name.text.xl.make(),

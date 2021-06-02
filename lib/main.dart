@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frist_flutter/Core/State.dart';
 import 'package:frist_flutter/Pages/Cart_Page.dart';
 import 'package:frist_flutter/Pages/Home_Page.dart';
 import 'package:frist_flutter/Pages/Login_Page.dart';
@@ -8,7 +9,7 @@ import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
 void main()
 {
-  runApp(VxState(store:null, child: MyApp( )));
+  runApp(VxState(store:MyStore(), child: MyApp( )));
 }
 
 class MyApp extends StatelessWidget {

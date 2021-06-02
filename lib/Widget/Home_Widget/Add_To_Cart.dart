@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:frist_flutter/Core/State.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/Models/cartModel.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -9,9 +10,10 @@ class AddToCart extends StatelessWidget {
   AddToCart({Key key, this.catalog})
       : assert(catalog!=null), super(key: key);
 
-  final _cart=CartModel();
   @override
   Widget build(BuildContext context) {
+    VxState.listen(context,to: [AddMutation,RemoveMutation]);
+    final CartModel _cart=(VxState.store as MyStore).cart;
     bool isAdded=_cart.iteams.contains(catalog)??false;
     return ElevatedButton(
         style: ButtonStyle(
@@ -24,11 +26,7 @@ class AddToCart extends StatelessWidget {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Already In Cart".text.xl.make()));
           }else
           {
-            isAdded=isAdded.toggle();
-            final _catlog=CatlogModel();
-
-            _cart.catalog=_catlog;
-            _cart.add(catalog);
+            AddMutation(catalog);
           }
 
 
