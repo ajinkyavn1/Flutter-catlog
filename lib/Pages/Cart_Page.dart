@@ -31,12 +31,28 @@ class CartPage extends StatelessWidget {
   }
 }
 class _CartToatal extends StatelessWidget {
- final Iteam iteam;
 
-  const _CartToatal({Key key, this.iteam}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SizedBox(
+      height:200,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          "\$900".text.xl4.color(context.accentColor).make(),
+          30.widthBox,
+          ElevatedButton(onPressed: (){},
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
+              ),
+              
+
+              child: "Buy".text.make()
+          ).w32(context)
+        ],
+      ),
+    );
+
   }
 }
