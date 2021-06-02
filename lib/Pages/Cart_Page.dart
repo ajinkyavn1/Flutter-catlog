@@ -22,7 +22,7 @@ class CartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Placeholder().p32().expand(),
+          _CartList().p32().expand(),
           Divider(),
           _CartToatal()
         ],
@@ -56,3 +56,23 @@ class _CartToatal extends StatelessWidget {
 
   }
 }
+class _CartList extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 50,
+        itemBuilder:(context,index){
+          return ListTile(
+            leading: Icon(Icons.done),
+          trailing: IconButton(
+              icon: Icon(Icons.remove_circle_outline_rounded),
+              onPressed: (){},
+            ),
+            title: "Iteam".text.xl.make(),
+          );
+        }
+    );
+  }
+}
+
