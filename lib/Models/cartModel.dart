@@ -1,18 +1,22 @@
 import 'package:frist_flutter/Models/Catlog.dart';
 
 class CartModel{
+
+  static final cartModel=CartModel._internal();
+  CartModel._internal();
+  factory CartModel()=>cartModel;
 CatlogModel _cartCatlog;
 final List<int> _ItemIds=[];
   CatlogModel get catalog=>_cartCatlog;
 
-  set catalog(CatlogModel catlogModel)
+  set catalog(CatlogModel newCatlog)
   {
-    assert (catalog!=null);
-    _cartCatlog=catlogModel;
+    assert (newCatlog!=null);
+    _cartCatlog=newCatlog;
   }
-  List<Iteam>get iteam=>_ItemIds.map((id) => _cartCatlog.getById(id)).toList();
+  List<Iteam>get iteams=>_ItemIds.map((id) => _cartCatlog.getById(id)).toList();
 
-  num get totalprice=>iteam.fold(0, (total,current) => current.price+totalprice);
+  num get totalprice=>iteams.fold(0, (total,current) => current.price+totalprice);
   void add(Iteam iteam)
   {
     _ItemIds.add(iteam.id);

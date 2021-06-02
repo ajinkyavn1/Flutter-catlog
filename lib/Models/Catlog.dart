@@ -31,6 +31,9 @@ class Iteam{
 
 }
 class CatlogModel {
+  static final catlogModel=CatlogModel._internal();
+  CatlogModel._internal();
+  factory CatlogModel()=>catlogModel;
   static List<Iteam> Items;
 
   Iteam getById(int id) => Items.firstWhere((element) => element.id== id,orElse: null);

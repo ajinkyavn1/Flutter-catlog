@@ -35,6 +35,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        tooltip: "Cart",
+
         child: Icon(CupertinoIcons.cart,color: Colors.white,),
         onPressed: (){
           Navigator.pushNamed(context, MyRoutes.CartPage);
