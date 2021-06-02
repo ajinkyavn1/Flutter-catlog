@@ -92,7 +92,14 @@ class _CartList extends StatelessWidget {
 
               icon: Icon(CupertinoIcons.cart_badge_minus),
                 onPressed: (){
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          duration:Duration(seconds: 1),
+                        content: "Removed ${_Cart.iteams[index].name} From Cart".text.make(),
+                      )
+                  );
                 RemoveMutation(_Cart.iteams[index]);
+
                 },
               ),
               title: _Cart.iteams[index].name.text.xl.make(),

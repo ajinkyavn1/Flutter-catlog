@@ -23,9 +23,16 @@ class AddToCart extends StatelessWidget {
         onPressed: (){
           if(isAdded)
           {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Already In Cart".text.xl.make()));
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Already In Cart".text.make(),duration:Duration(seconds: 1),));
           }else
           {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                duration:Duration(seconds: 1),
+                  content: "${catalog.name} Is Added To Cart".text.make()
+
+              )
+            );
             AddMutation(catalog);
           }
 
