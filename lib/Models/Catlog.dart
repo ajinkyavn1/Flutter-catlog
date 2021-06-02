@@ -33,5 +33,5 @@ class Iteam{
 class CatlogModel {
   static List<Iteam> Items;
 
-  static Iteam getById(int id) => Items.firstWhere((element) => element.id== id,orElse: null);
+  Iteam getById(int id) => Items.firstWhere((element) => element.id== id,orElse: null);
 }
