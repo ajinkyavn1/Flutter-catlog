@@ -42,11 +42,17 @@ class _CartToatal extends StatelessWidget {
         children: [
           "\$900".text.xl4.color(context.accentColor).make(),
           30.widthBox,
-          ElevatedButton(onPressed: (){},
+          ElevatedButton(
+              onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: "Buy Is Not Supported Yet".text.make(),
+             )
+            );
+          },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
               ),
-
 
               child: "Buy".text.make()
           ).w32(context)
