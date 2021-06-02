@@ -16,13 +16,13 @@ final List<int> _ItemIds=[];
   }
   List<Iteam>get iteams=>_ItemIds.map((id) => _cartCatlog.getById(id)).toList();
 
-  num get totalprice=>iteams.fold(0, (total,current) => current.price+totalprice);
-  void add(Iteam iteam)
+  num get totalprice=>iteams.fold(0, (total,current) => current.price+total);
+  void add(Iteam iteams)
   {
-    _ItemIds.add(iteam.id);
+    _ItemIds.add(iteams.id);
   }
-  void remove(Iteam iteam)
+  void remove(Iteam iteams)
   {
-    _ItemIds.remove(iteam.id);
+    _ItemIds.remove(iteams.id);
   }
 }

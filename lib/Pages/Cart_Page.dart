@@ -41,11 +41,10 @@ class _CartToatal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$0".text.xl4.color(context.accentColor).make(),
+          "\$${_Cart.totalprice}".text.xl4.color(context.accentColor).make(),
           30.widthBox,
           ElevatedButton(
               onPressed: () {
-                print("\$${_Cart.iteams.length}");
             ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: "Buy Is Not Supported Yet".text.make(),
