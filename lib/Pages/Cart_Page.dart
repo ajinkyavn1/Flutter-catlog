@@ -56,8 +56,13 @@ class _CartToatal extends StatelessWidget {
 
   }
 }
-class _CartList extends StatelessWidget {
+class _CartList extends StatefulWidget {
 
+  @override
+  __CartListState createState() => __CartListState();
+}
+
+class __CartListState extends State<_CartList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
