@@ -63,13 +63,8 @@ class _CartToatal extends StatelessWidget {
 
   }
 }
-class _CartList extends StatefulWidget {
-
-  @override
-  __CartListState createState() => __CartListState();
-}
-
-class __CartListState extends State<_CartList> {
+class _CartList extends StatelessWidget {
+  const _CartList({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -86,9 +81,6 @@ class __CartListState extends State<_CartList> {
             icon: Icon(CupertinoIcons.cart_badge_minus),
               onPressed: (){
               _Cart.remove(_Cart.iteams[index]);
-              setState(() {
-
-              });
               },
             ),
             title: _Cart.iteams[index].name.text.xl.make(),

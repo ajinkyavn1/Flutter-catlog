@@ -5,7 +5,6 @@ import 'package:frist_flutter/Pages/Home_Page.dart';
 import 'package:frist_flutter/Pages/Login_Page.dart';
 import 'package:frist_flutter/Pages/Routes.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 void main()
 {

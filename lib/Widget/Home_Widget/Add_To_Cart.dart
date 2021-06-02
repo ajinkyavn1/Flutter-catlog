@@ -4,20 +4,15 @@ import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/Models/cartModel.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AddToCart extends StatefulWidget {
+class AddToCart extends StatelessWidget {
   final Iteam catalog;
-  const AddToCart({Key key, this.catalog})
+  AddToCart({Key key, this.catalog})
       : assert(catalog!=null), super(key: key);
 
-  @override
-  _AddToCartState createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<AddToCart> {
   final _cart=CartModel();
   @override
   Widget build(BuildContext context) {
-    bool isAdded=_cart.iteams.contains(widget.catalog)??false;
+    bool isAdded=_cart.iteams.contains(catalog)??false;
     return ElevatedButton(
         style: ButtonStyle(
             shape: MaterialStateProperty.all(StadiumBorder()),
@@ -33,10 +28,7 @@ class _AddToCartState extends State<AddToCart> {
             final _catlog=CatlogModel();
 
             _cart.catalog=_catlog;
-            _cart.add(widget.catalog);
-            setState(() {
-
-            });
+            _cart.add(catalog);
           }
 
 
