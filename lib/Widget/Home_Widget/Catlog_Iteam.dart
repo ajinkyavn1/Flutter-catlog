@@ -65,15 +65,22 @@ class __AddToCartState extends State<_AddToCart> {
             backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
         ),
         onPressed: (){
-          isAdded=isAdded.toggle();
+         if(isAdded)
+           {
+             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Already In Cart".text.xl.make()));
+           }else
+             {
+               isAdded=isAdded.toggle();
+               final _catlog=CatlogModel();
 
-          final _catlog=CatlogModel();
+               _cart.catalog=_catlog;
+               _cart.add(widget.catalog);
+               setState(() {
 
-          _cart.catalog=_catlog;
-          _cart.add(widget.catalog);
-          setState(() {
+               });
+             }
 
-          });
+
         },
         child:isAdded?Icon(Icons.done):"Add to Cart".text.make()
     );
