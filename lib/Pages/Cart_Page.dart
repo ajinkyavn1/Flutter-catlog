@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:velocity_x/velocity_x.dart';
 class CartPage extends StatelessWidget {
   final Iteam iteam;
 
@@ -19,9 +20,22 @@ class CartPage extends StatelessWidget {
         title: "Cart".text.center.color(context.accentColor).make(),
 
       ),
-      body: Center(
-        // child: Image.network(iteam.image),
+      body: Column(
+        children: [
+          Placeholder().p32().expan d(),
+          Divider(),
+          
+          _CartTotal();
+        ],
       ),
     );
+  }
+}
+class _CartToatal extends StatelessWidget {
+  const _CartToatal({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
