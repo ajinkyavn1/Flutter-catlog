@@ -6,9 +6,10 @@ import 'package:frist_flutter/Pages/Login_Page.dart';
 import 'package:frist_flutter/Pages/Routes.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 void main()
 {
-  runApp(MyApp( ));
+  runApp(VxState(store:null, child: MyApp( )));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       //home:HomePage(),
       themeMode: ThemeMode.system,
      theme: MyTheam.lightTheme(context),
-     darkTheme: MyTheam.darkTheme(context), 
+     darkTheme: MyTheam.darkTheme(context),
     initialRoute:MyRoutes.homepage ,
      routes: {
       MyRoutes.homepage:(context)=>HomePage(),
