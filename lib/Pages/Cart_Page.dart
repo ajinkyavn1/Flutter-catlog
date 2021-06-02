@@ -83,11 +83,11 @@ class __CartListState extends State<_CartList> {
             leading: Icon(Icons.done),
           trailing: IconButton(
 
-            icon: Icon(Icons.remove_circle_outline_rounded,),
+            icon: Icon(CupertinoIcons.cart_badge_minus),
               onPressed: (){
               _Cart.remove(_Cart.iteams[index]);
               setState(() {
-                
+
               });
               },
             ),

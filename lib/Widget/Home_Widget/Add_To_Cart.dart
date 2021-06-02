@@ -43,7 +43,7 @@ class _AddToCartState extends State<AddToCart> {
         },
         child:isAdded
             ?Icon(Icons.done)
-            :Icon(Icons.add_shopping_cart_outlined)
+            :Icon(CupertinoIcons.cart_badge_plus)
     );
   }
 }
