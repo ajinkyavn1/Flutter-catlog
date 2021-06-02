@@ -6,6 +6,7 @@ import 'package:frist_flutter/Pages/Cart_Page.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'Add_To_Cart.dart';
 import 'Catlog_Image.dart';
 
 class CatlogIteam extends StatelessWidget {
@@ -35,7 +36,7 @@ class CatlogIteam extends StatelessWidget {
                   buttonPadding: EdgeInsets.zero,
                   children: [
                     "\$${Catlog.price}".text.bold.xl.make(),
-                      _AddToCart(catalog: Catlog,)
+                      AddToCart(catalog: Catlog,)
                   ],
                 ).pOnly(right: 8.0)
               ],
@@ -45,45 +46,3 @@ class CatlogIteam extends StatelessWidget {
     ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }
-class _AddToCart extends StatefulWidget {
-  final Iteam catalog;
-  const _AddToCart({Key key, this.catalog})
-      : assert(catalog!=null), super(key: key);
-
-  @override
-  __AddToCartState createState() => __AddToCartState();
-}
-
-class __AddToCartState extends State<_AddToCart> {
-  final _cart=CartModel();
-  @override
-  Widget build(BuildContext context) {
-    bool isAdded=_cart.iteams.contains(widget.catalog)??false;
-    return ElevatedButton(
-        style: ButtonStyle(
-            shape: MaterialStateProperty.all(StadiumBorder()),
-            backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
-        ),
-        onPressed: (){
-         if(isAdded)
-           {
-             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: "Already In Cart".text.xl.make()));
-           }else
-             {
-               isAdded=isAdded.toggle();
-               final _catlog=CatlogModel();
-
-               _cart.catalog=_catlog;
-               _cart.add(widget.catalog);
-               setState(() {
-
-               });
-             }
-
-
-        },
-        child:isAdded?Icon(Icons.done):"Add to Cart".text.make()
-    );
-  }
-}
-

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:frist_flutter/Models/Catlog.dart';
 import 'package:frist_flutter/TheamData/TheamData.dart';
+import 'package:frist_flutter/Widget/Home_Widget/Add_To_Cart.dart';
 import 'package:velocity_x/velocity_x.dart';
 class HomeDetailsPage extends StatelessWidget {
 final Iteam Catlog;
@@ -19,14 +20,7 @@ final Iteam Catlog;
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${Catlog.price}".text.bold.xl4.red500.make(),
-            ElevatedButton(
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all(StadiumBorder()),
-                    backgroundColor: MaterialStateProperty.all(context.theme.buttonColor)
-                ),
-                onPressed: (){},
-                child: "Add to Cart".text.make()
-            ).wh(120,50)
+            AddToCart(catalog: Catlog,)
           ],
         ).p32(),
       ),
