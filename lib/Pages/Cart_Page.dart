@@ -22,17 +22,18 @@ class CartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Placeholder().p32().expan d(),
+          Placeholder().p32().expand(),
           Divider(),
-          
-          _CartTotal();
+          _CartToatal()
         ],
       ),
     );
   }
 }
 class _CartToatal extends StatelessWidget {
-  const _CartToatal({Key? key}) : super(key: key);
+ final Iteam iteam;
+
+  const _CartToatal({Key key, this.iteam}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
