@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               SizedBox(height: 100,),
-              Image.asset("assets/images/taxi.jpg",fit: BoxFit.cover,alignment: Alignment.center, ),
+              Image.asset("assets/images/login_bg.png",fit: BoxFit.cover,alignment: Alignment.center, ),
               SizedBox(height:2,),
               Text("Welcome $name",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.red),),
 
