@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
     final decodedjson=jsonDecode(catlogjson);
     var products=decodedjson["products"];
    CatlogModel.Items=List.from(products).map<Iteam>((iteam) =>Iteam.fromMap(iteam)).toList();
+    print(CatlogModel.Items);
    setState(() {
    });
   }
